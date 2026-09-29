@@ -4,6 +4,7 @@ import "./globals.css"
 import Navbar from "./components/navbar"
 import { WorkoutProvider } from "./context/WorkoutContext"
 import { Toaster } from "react-hot-toast"
+import Footer from "./components/footer"
 
 
 
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           {children}
           <Toaster position="top-right" />
         </WorkoutProvider>
+        <Footer />
       </body>
 
     </html>
