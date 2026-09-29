@@ -1,6 +1,7 @@
 "use client"
 import { useWorkout } from "@/app/context/WorkoutContext"
 import { Workout } from "@/app/types/workout"
+import toast from "react-hot-toast"
 
 type WorkoutConnectProps = {
     workout: Workout
@@ -10,9 +11,11 @@ const WorkoutConnect = ({ workout }: WorkoutConnectProps) => {
 
     const addWorkout = () => {
         addToPlan(workout)
+        toast.success("Added to today's plan!")
     }
     const saveWorkoutItems = () => {
         saveWorkout(workout)
+        toast.success("Saved for later!")
     }
 
     return (
