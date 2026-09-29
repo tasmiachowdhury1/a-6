@@ -1,4 +1,5 @@
 import { getWorkoutById } from "@/app/lib/api";
+import WorkoutConnect from "@/app/components/workout/WorkoutConnect";
 
 type WorkoutDetailsProps = {
     params: Promise<{ id: string }>;
@@ -142,6 +143,8 @@ const WorkoutDetails = async ({ params }: WorkoutDetailsProps) => {
                             </ol>
 
                         </div>
+
+                        <WorkoutConnect workout={workout} />
 
                     </div>
 

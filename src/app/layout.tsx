@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Oswald } from "next/font/google"
 import "./globals.css"
 import Navbar from "./components/navbar"
+import { WorkoutProvider } from "./context/WorkoutContext"
 
 
 
@@ -18,11 +19,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       lang="en"
     >
       <body className={`min-h-full flex flex-col ${oswald.className}`}>
-        <Navbar />
-        {children}
+        <WorkoutProvider>
+          <Navbar />
+          {children}
+        </WorkoutProvider>
       </body>
 
     </html>
   )
 }
-
